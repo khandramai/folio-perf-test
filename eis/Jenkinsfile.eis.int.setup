@@ -35,27 +35,31 @@ node {
       sshagent(credentials:["${context.sshKeyId}"]) {
 
         stage("Create Environment") {
-          sharedLib.createEnv(context)
+          // sharedLib.createEnv(context)
         }
 
         stage("Wait for Environment") {
-          sharedLib.waitForEnv(context)
+          // sharedLib.waitForEnv(context)
         }
 
         stage("Bootstrap DB") {
-          sharedLib.bootstrapDb(context)
+          // sharedLib.bootstrapDb(context)
         }
 
         stage("Bootstrap Okapi") {
-          sharedLib.bootstrapOkapi(context)
+          // sharedLib.bootstrapOkapi(context)
         }
 
         stage("Bootstrap modules") {
-          sharedLib.bootstrapModules(context)
+          // sharedLib.bootstrapModules(context)
         }
 
         stage("Populate data") {
-          sharedLib.populateData(context)
+          // sharedLib.populateData(context)
+        }
+
+        stage("Running JMeter tests") {
+          sharedLib.runJmeterTests(context)
         }
       }
     }
