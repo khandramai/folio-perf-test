@@ -35,11 +35,11 @@ node {
       sshagent(credentials:["${context.sshKeyId}"]) {
 
         stage("Create Environment") {
-          // sharedLib.createEnv(context)
+          sharedLib.createEnv(context)
         }
 
         stage("Wait for Environment") {
-          // sharedLib.waitForEnv(context)
+          sharedLib.waitForEnv(context)
         }
 
         stage("Bootstrap DB") {
