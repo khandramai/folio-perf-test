@@ -43,15 +43,15 @@ node {
         }
 
         stage("Bootstrap DB") {
-          // sharedLib.bootstrapDb(context)
+          sharedLib.bootstrapDb(context)
         }
 
         stage("Bootstrap Okapi") {
-          // sharedLib.bootstrapOkapi(context)
+          sharedLib.bootstrapOkapi(context)
         }
 
         stage("Bootstrap modules") {
-          // sharedLib.bootstrapModules(context)
+          sharedLib.bootstrapModules(context)
         }
 
         stage("Populate data") {
@@ -59,7 +59,7 @@ node {
         }
 
         stage("Running JMeter tests") {
-          sharedLib.runJmeterTests(context)
+          // sharedLib.runJmeterTests(context)
         }
       }
     }
